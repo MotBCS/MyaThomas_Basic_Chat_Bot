@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
+    
   <category>
-    <pattern>*</pattern>
-    <template>I have no answer for that.</template>
+      <pattern>HELLO</pattern>
+      <template>
+      Hi there! My name is chatter-bot! What's your name? 😃<br/>(Please start with "My name is...")
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HI</pattern>
+      <template>
+      <srai>HELLO</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HEY</pattern>
+      <template>
+      <srai>HELLO</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>MY NAME IS * *</pattern>
+      <template>Nice to meet you <set name="firstname"><star index="1"/>! Are you looking for career advice today?</set></template>
+  </category>
+  
+  <category>
+      <pattern>YES</pattern>
+      <template>Great! Let's start with your major. Are you studying computer science? (Yes/No)</template>
+  </category>
+  
+  <category>
+      <pattern>NO</pattern>
+      <template>Sorry, at the moment I am only able to provide career advice for computer science students. Would you still like to continue the session? (Yes/No)</template>
   </category>
 </aiml>
