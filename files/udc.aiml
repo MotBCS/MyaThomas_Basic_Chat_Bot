@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-    
   <category>
       <pattern>HELLO</pattern>
       <template>
-      Hi there! My name is chatter-bot! What's your name? 😃<br/>(Please start with "My name is...")
+          <random>
+              <li>Hey there! </li>
+              <li>Howdy! </li>
+              <li>Hi! </li>
+              <li>Hello! </li>
+              <li>Greetings! </li>
+          </random>
+           My name is chatter-bot! What's your name?<br/>(Please start with "My name is...")
       </template>
   </category>
   
@@ -23,17 +29,54 @@
   </category>
   
   <category>
-      <pattern>MY NAME IS * *</pattern>
-      <template>Nice to meet you <set name="firstname"><star index="1"/>! Are you looking for career advice today?</set></template>
+      <pattern>MY NAME IS *</pattern>
+      <template>
+          Nice to meet you <set name="firstname"><star index="1"/></set>! Are you looking for career advice today?
+          
+          <button>
+              <text>Yes, I am looking for advice!</text>
+              <postback>YES ADVICE</postback>
+          </button>
+          <button>
+              <text>Nevermind.</text>
+              <postback>GOODBYE</postback>
+          </button>
+      </template>
   </category>
   
   <category>
-      <pattern>YES</pattern>
+      <pattern>YES ADVICE</pattern>
       <template>Great! Let's start with your major. Are you studying computer science? (Yes/No)</template>
   </category>
   
   <category>
-      <pattern>NO</pattern>
-      <template>Sorry, at the moment I am only able to provide career advice for computer science students. Would you still like to continue the session? (Yes/No)</template>
+      <pattern></pattern>
+      <template>Awesome! Do you enjoying designing or programming or both</template>
   </category>
+  
+  <category>
+      <pattern>_ DESIGNING</pattern>
+      <template></template>
+  </category>
+  
+  <category>
+      <pattern>_ PROGRAMMING</pattern>
+      <template></template>
+  </category>
+  
+  <category>
+      <pattern>_ BOTH</pattern>
+      <template></template>
+  </category>
+
+  <category>
+      <pattern>NO</pattern>
+      <template>Sorry <get name="firstname"/>, at the moment I am only able to provide career advice for computer science students. Would you still like to continue the session? (Yes/No)</template>
+  </category>
+  
+  <category>
+      <pattern>GOODBYE</pattern>
+      <template>Goodbye <get name="firstname"/>, thank you for chatting! (Please close chat window)</template>
+  </category>
+  
 </aiml>
