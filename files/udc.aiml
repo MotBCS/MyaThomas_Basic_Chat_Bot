@@ -2,7 +2,7 @@
 <aiml>
   <category>
       <pattern>HELLO</pattern>
-      <template>
+      <template><delay>1</delay>
           <random>
               <li>Hey there! </li>
               <li>Howdy! </li>
@@ -30,53 +30,112 @@
   
   <category>
       <pattern>MY NAME IS *</pattern>
-      <template>
+      <template><delay>0.8</delay>
           Nice to meet you <set name="firstname"><star index="1"/></set>! Are you looking for career advice today?
           
           <button>
               <text>Yes, I am looking for advice!</text>
               <postback>YES ADVICE</postback>
           </button>
+          
           <button>
               <text>Nevermind.</text>
               <postback>GOODBYE</postback>
           </button>
+          
       </template>
   </category>
   
   <category>
       <pattern>YES ADVICE</pattern>
-      <template>Great! Let's start with your major. Are you studying computer science? (Yes/No)</template>
+      <template><delay>0.8</delay>
+          Great! Let's start with your major. Are you studying computer science?
+          
+          <button>
+              <text>Yes, I am a computer science major.</text>
+              <postback>COMPUTER SCIENCE MAJOR</postback>
+          </button>
+          
+          <button>
+              <text>No, I am studying a different major.</text>
+              <postback>NO</postback>
+          </button>
+          
+        </template>
   </category>
   
   <category>
-      <pattern></pattern>
-      <template>Awesome! Do you enjoying designing or programming or both</template>
+      <pattern>COMPUTER SCIENCE MAJOR</pattern>
+      <template><delay>0.8</delay>
+          Awesome! Do you enjoying designing, programming or both
+          
+          <button>
+              <text>Design</text>
+              <postback>DESIGNING</postback>
+          </button>
+          
+          <button>
+              <text>Programming</text>
+              <postback>PROGRAMMING</postback>
+          </button>
+          
+          <button>
+              <text>Both</text>
+              <postback>BOTH</postback>
+          </button>
+          
+        </template>
   </category>
   
   <category>
       <pattern>_ DESIGNING</pattern>
-      <template></template>
+      <template><delay>0.8</delay>
+          Check out these five creative tech career suggestions!
+      </template>
   </category>
   
   <category>
       <pattern>_ PROGRAMMING</pattern>
-      <template></template>
+      <template><delay>0.8</delay>
+          Check out these five career suggestions that focus on programming!
+      </template>
   </category>
   
   <category>
       <pattern>_ BOTH</pattern>
-      <template></template>
+      <template><delay>0.8</delay>
+          If you enjoy programming and designing, check out these career suggestions!
+        </template>
   </category>
 
   <category>
       <pattern>NO</pattern>
-      <template>Sorry <get name="firstname"/>, at the moment I am only able to provide career advice for computer science students. Would you still like to continue the session? (Yes/No)</template>
+      <template><delay>0.8</delay>
+          Sorry <get name="firstname"/>, at the moment I am only able to provide career advice for computer science students. Would you still like to continue the session?
+          
+          <button>
+              <text>Yes</text>
+              <postback>COMPUTER SCIENCE MAJOR</postback>
+          </button>
+          
+          <button>
+              <text>No</text>
+              <postback>GOODBYE</postback>
+          </button>
+          
+        </template>
   </category>
   
   <category>
       <pattern>GOODBYE</pattern>
-      <template>Goodbye <get name="firstname"/>, thank you for chatting! (Please close chat window)</template>
+      <template><delay>1</delay>
+          Thank you for chatting <get name="firstname"/>! (Please close chat window)
+          </template>
   </category>
   
 </aiml>
+
+<!--
+Questions to ask student:
+
+-->
