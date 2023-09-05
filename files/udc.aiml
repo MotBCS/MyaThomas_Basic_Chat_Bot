@@ -30,7 +30,7 @@
   
   <category>
       <pattern>MY NAME IS *</pattern>
-      <template><delay>0.8</delay>
+      <template><delay>1</delay>
           Nice to meet you <set name="firstname"><star index="1"/></set>! Are you looking for career advice today?
           
           <button>
@@ -48,7 +48,7 @@
   
   <category>
       <pattern>YES ADVICE</pattern>
-      <template><delay>0.8</delay>
+      <template><delay>1</delay>
           Great! Let's start with your major. Are you studying computer science?
           
           <button>
@@ -66,7 +66,7 @@
   
   <category>
       <pattern>COMPUTER SCIENCE MAJOR</pattern>
-      <template><delay>0.8</delay>
+      <template><delay>1</delay>
           Awesome! Do you enjoying designing, programming or both
           
           <button>
@@ -89,28 +89,83 @@
   
   <category>
       <pattern>_ DESIGNING</pattern>
-      <template><delay>0.8</delay>
-          Check out these five creative tech career suggestions!
+      <template><delay>1</delay>
+          Check out these creative tech career suggestions!
+          
+          <carousel>
+              
+             <card>
+              <title></title>
+              <image></image>
+              
+              <button>
+                  <text>Learn More!</text>
+                  <postback></postback>
+              </button>
+            </card>
+            
+            <card>
+              <title></title>
+              <image></image>
+              
+              <button>
+                  <text>Learn More!</text>
+                  <postback></postback>
+              </button>
+            </card>
+            
+            <card>
+              <title></title>
+              <image></image>
+              
+              <button>
+                  <text>Learn More!</text>
+                  <postback></postback>
+              </button>
+            </card>
+            
+            <card>
+              <title></title>
+              <image></image>
+              
+              <button>
+                  <text>Learn More!</text>
+                  <postback></postback>
+              </button>
+            </card>
+            
+            <card>
+              <title></title>
+              <image></image>
+              
+              <button>
+                  <text>Learn More!</text>
+                  <postback></postback>
+              </button>
+            </card>
+          
+          </carousel>
+          
       </template>
   </category>
   
   <category>
       <pattern>_ PROGRAMMING</pattern>
-      <template><delay>0.8</delay>
-          Check out these five career suggestions that focus on programming!
+      <template><delay>1</delay>
+          Check out these career suggestions that focus on programming!
       </template>
   </category>
   
   <category>
       <pattern>_ BOTH</pattern>
-      <template><delay>0.8</delay>
+      <template><delay>1</delay>
           If you enjoy programming and designing, check out these career suggestions!
         </template>
   </category>
 
   <category>
       <pattern>NO</pattern>
-      <template><delay>0.8</delay>
+      <template><delay>1</delay>
           Sorry <get name="firstname"/>, at the moment I am only able to provide career advice for computer science students. Would you still like to continue the session?
           
           <button>
@@ -129,8 +184,7 @@
   <category>
       <pattern>GOODBYE</pattern>
       <template><delay>1</delay>
-          Thank you for chatting <get name="firstname"/>! (Please close chat window)
-          </template>
+          Thank you for chatting <get name="firstname"/>! (Please close chat window)</template>
   </category>
   
 </aiml>
@@ -138,4 +192,16 @@
 <!--
 Questions to ask student:
 
+- CREATIVE
+    - UX Designer ($74,000)
+    - Front-End Developer ($74,000)
+    - Game Designer ($65,000)
+    - Mobile Application Developer ($73,000)
+    - Software Product Designer ($82,000)
+    
+-TECHNICAL
+    - Computer Network Architect ($131,490)
+    - Software Developer ($109,020)
+    - Database Administrator ($101,000)
+    -Information Security Analyst ($102,600)
 -->
