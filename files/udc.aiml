@@ -84,6 +84,11 @@
               <postback>BOTH</postback>
           </button>
           
+          <button>
+              <text>Exit Session</text>
+              <postback>GOODBYE</postback>
+          </button>
+          
         </template>
   </category>
   
@@ -93,13 +98,14 @@
           Check out these creative tech career suggestions!
           
           <carousel>
-              
              <card>
               <title>UX Designer</title>
               <subtitle>Focuses on the usability, function, branding, and design of the product.</subtitle>
               <button>
-                  <text>Click here to learn more!</text>
-                  <postback></postback>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://careerfoundry.com/en/blog/ux-design/what-does-a-ux-designer-actually-do/</url>
+                    </link>
               </button>
             </card>
             
@@ -108,8 +114,10 @@
               <subtitle>Focuses on the user-facing elements of a website, web application, and mobile application.</subtitle>
               
               <button>
-                  <text>Click here to learn more!</text>
-                  <postback></postback>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.coursera.org/articles/front-end-developer/</url>
+                    </link>
               </button>
             </card>
             
@@ -118,8 +126,10 @@
               <subtitle>Focuses on the function of a game and gameplay.</subtitle>
               
               <button>
-                  <text>Click here to learn more!</text>
-                  <postback></postback>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.idtech.com/blog/what-is-a-game-designer/</url>
+                    </link>
               </button>
             </card>
             
@@ -128,8 +138,10 @@
               <subtitle>Focuses on writing software for use on mobile operating systems.</subtitle>
               
               <button>
-                  <text>Click here to learn more!</text>
-                  <postback></postback>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.itcareerfinder.com/it-careers/mobile-application-developer.html/</url>
+                    </link>
               </button>
             </card>
             
@@ -138,12 +150,14 @@
               <subtitle>Focuses on developing the visual design of software products.</subtitle>
               
               <button>
-                  <text>Click here to learn more!</text>
-                  <postback></postback>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.coursera.org/articles/what-is-a-product-designer</url>
+                    </link>
               </button>
             </card>
-          
           </carousel>
+          
           <button>
               <text>Not Interested...</text>
               <postback>RETURN1</postback>
@@ -156,6 +170,57 @@
       <pattern>_ PROGRAMMING</pattern>
       <template><delay>1</delay>
           Check out these career suggestions that focus on programming!
+          
+          <carousel>
+              <card>
+              <title>Computer Network Architect</title>
+              <subtitle>Focuses on designing and deploying computer and information networks.</subtitle>
+              <button>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.bls.gov/ooh/computer-and-information-technology/computer-network-architects.htm/</url>
+                    </link>
+              </button>
+            </card>
+            
+            <card>
+              <title>Software Developer</title>
+              <subtitle>Focuses on designing, programming, deploying and maintaining software.</subtitle>
+              <button>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.coursera.org/articles/software-developer/</url>
+                    </link>
+              </button>
+            </card>
+            
+            <card>
+              <title>Database Administrator</title>
+              <subtitle>Focuses on ensuring that an organizations databases run efficiently.</subtitle>
+              <button>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm#:~:text=databases%20run%20efficiently.-,Database%20administrators%20and%20architects%20create%20or%20organize%20systems%20to%20store,are%20available%20to%20authorized%20users.</url>
+                    </link>
+              </button>
+            </card>
+            
+            <card>
+              <title>Information Security Analyst</title>
+              <subtitle>Focuses on monitoring organization's network security.</subtitle>
+              <button>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm</url>
+                    </link>
+              </button>
+            </card>/
+          </carousel>
+          
+          <button>
+              <text>Not Interested...</text>
+              <postback>RETURN3</postback>
+            </button>
       </template>
   </category>
   
@@ -163,6 +228,24 @@
       <pattern>_ BOTH</pattern>
       <template><delay>1</delay>
           If you enjoy programming and designing, check out these career suggestions!
+          
+          <carousel>
+            <card>
+              <title>Full-Stack Developer</title>
+              <subtitle>Focuses on the best of both worlds. Front end and back end development.</subtitle>
+              <button>
+                  <link>
+                    <text>Click here to learn more!</text>
+                    <url>https://www.coursera.org/articles/full-stack-developer</url>
+                    </link>
+              </button>
+            </card>/
+          </carousel>
+          
+          <button>
+              <text>Not Interested...</text>
+              <postback>RETURN2</postback>
+            </button>
         </template>
   </category>
 
@@ -187,13 +270,37 @@
   <category>
       <pattern>GOODBYE</pattern>
       <template><delay>1</delay>
-          Thank you for chatting <get name="firstname"/>! (Please close chat window)</template>
+          Thank you for chatting <get name="firstname"/>, best of luck in your future endeavors! (Please close chat window)</template>
   </category>
+  
+  <category>
+      <pattern>SATISFIED</pattern>
+      <template><delay>1</delay>
+          Fantastic! Happy to help, thank you for chatting <get name="firstname"/>, best of luck in your future endeavors! (Please close chat window)</template>
+  </category>
+  
+  <category>
+      <pattern>DISSATISFIED</pattern>
+      <template><delay>1</delay>
+          Would like to continue viewing the suggestions?
+         <button>
+             <text>Yes.</text>
+             <postback>COMPUTER SCIENCE MAJOR</postback>
+         </button>
+         
+         <button>
+             <text>No, end session.</text>
+             <postback>GOODBYE</postback>
+         </button>
+         
+         </template>
+  </category>
+  
   
   <category>
       <pattern>RETURN1</pattern>
       <template><delay>1</delay>
-          Nothing caught your eye? Lets try another category.
+          Nothing caught your eye? Let's try another category.
          
           <button>
               <text>Programming</text>
@@ -205,9 +312,73 @@
               <postback>BOTH</postback>
           </button>
           
+          <button>
+              <text>Exit Session</text>
+              <postback>GOODBYE</postback>
+          </button>
+          
         </template>
   </category>
   
+  <category>
+      <pattern>RETURN2</pattern>
+      <template><delay>1</delay>
+          Nothing caught your eye? Let's try another category.
+          
+          <button>
+              <text>Design</text>
+              <postback>DESIGNING</postback>
+          </button>
+         
+          <button>
+              <text>Programming</text>
+              <postback>PROGRAMMING</postback>
+          </button>
+          
+          <button>
+              <text>Exit Session</text>
+              <postback>GOODBYE</postback>
+          </button>
+          
+        </template>
+  </category>
+  
+  <category>
+      <pattern>RETURN3</pattern>
+      <template><delay>1</delay>
+          Nothing caught your eye? Let's try another category.
+          
+          <button>
+              <text>Design</text>
+              <postback>DESIGNING</postback>
+          </button>
+         
+          <button>
+              <text>Both</text>
+              <postback>BOTH</postback>
+          </button>
+          
+          <button>
+              <text>Exit Session</text>
+              <postback>GOODBYE</postback>
+          </button>
+          
+        </template>
+  </category>
+  
+  <category>
+      <pattern>Click _</pattern>
+      <template>Was I able to assist in your career search?</template>
+      <button>
+          <text>Yes, thank you!</text>
+          <postback>SATISFIED</postback>
+      </button>
+
+      <button>
+          <text>No, I want to continue looking.</text>
+          <postback>DISSATISFIED</postback>
+      </button>
+  </category>
 </aiml>
 
 <!--
