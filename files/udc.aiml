@@ -67,7 +67,7 @@
   <category>
       <pattern>COMPUTER SCIENCE MAJOR</pattern>
       <template><delay>1</delay>
-          Awesome! Do you enjoying designing, programming or both
+          Awesome! Do you enjoying designing, programming or both?
           
           <button>
               <text>Design</text>
@@ -95,56 +95,59 @@
           <carousel>
               
              <card>
-              <title></title>
-              <image></image>
-              
+              <title>UX Designer</title>
+              <subtitle>Focuses on the usability, function, branding, and design of the product.</subtitle>
               <button>
-                  <text>Learn More!</text>
+                  <text>Click here to learn more!</text>
                   <postback></postback>
               </button>
             </card>
             
             <card>
-              <title></title>
-              <image></image>
+              <title>Front-End Developer</title>
+              <subtitle>Focuses on the user-facing elements of a website, web application, and mobile application.</subtitle>
               
               <button>
-                  <text>Learn More!</text>
+                  <text>Click here to learn more!</text>
                   <postback></postback>
               </button>
             </card>
             
             <card>
-              <title></title>
-              <image></image>
+              <title>Game Designer</title>
+              <subtitle>Focuses on the function of a game and gameplay.</subtitle>
               
               <button>
-                  <text>Learn More!</text>
+                  <text>Click here to learn more!</text>
                   <postback></postback>
               </button>
             </card>
             
             <card>
-              <title></title>
-              <image></image>
+              <title>Mobile Application Developer</title>
+              <subtitle>Focuses on writing software for use on mobile operating systems.</subtitle>
               
               <button>
-                  <text>Learn More!</text>
+                  <text>Click here to learn more!</text>
                   <postback></postback>
               </button>
             </card>
             
             <card>
-              <title></title>
-              <image></image>
+              <title>Software Product Designer</title>
+              <subtitle>Focuses on developing the visual design of software products.</subtitle>
               
               <button>
-                  <text>Learn More!</text>
+                  <text>Click here to learn more!</text>
                   <postback></postback>
               </button>
             </card>
           
           </carousel>
+          <button>
+              <text>Not Interested...</text>
+              <postback>RETURN1</postback>
+            </button>
           
       </template>
   </category>
@@ -187,21 +190,42 @@
           Thank you for chatting <get name="firstname"/>! (Please close chat window)</template>
   </category>
   
+  <category>
+      <pattern>RETURN1</pattern>
+      <template><delay>1</delay>
+          Nothing caught your eye? Lets try another category.
+         
+          <button>
+              <text>Programming</text>
+              <postback>PROGRAMMING</postback>
+          </button>
+          
+          <button>
+              <text>Both</text>
+              <postback>BOTH</postback>
+          </button>
+          
+        </template>
+  </category>
+  
 </aiml>
 
 <!--
 Questions to ask student:
 
 - CREATIVE
-    - UX Designer ($74,000)
-    - Front-End Developer ($74,000)
-    - Game Designer ($65,000)
-    - Mobile Application Developer ($73,000)
-    - Software Product Designer ($82,000)
+    - UX Designer*
+    - Front-End Developer ($74,000)*
+    - Game Designer ($65,000)*
+    - Mobile Application Developer ($73,000)*
+    - Software Product Designer ($82,000)*
     
 -TECHNICAL
     - Computer Network Architect ($131,490)
     - Software Developer ($109,020)
     - Database Administrator ($101,000)
     -Information Security Analyst ($102,600)
+    
+BOTH
+    - Full-Stack Developer ($129,168)
 -->
