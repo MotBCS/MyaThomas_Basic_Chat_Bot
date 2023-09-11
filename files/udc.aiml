@@ -67,7 +67,7 @@
   <category>
       <pattern>COMPUTER SCIENCE MAJOR</pattern>
       <template><delay>1</delay>
-          Awesome! Do you enjoying designing, programming or both?
+          Awesome! Do you enjoy designing, programming or both?
           
           <button>
               <text>Design</text>
