@@ -162,6 +162,11 @@
               <text>Not Interested...</text>
               <postback>RETURN1</postback>
             </button>
+            
+            <button>
+                <text>Found a career!</text>
+                <postback>DONE</postback>
+            </button>
           
       </template>
   </category>
@@ -196,7 +201,7 @@
             
             <card>
               <title>Database Administrator</title>
-              <subtitle>Focuses on ensuring that an organizations databases run efficiently.</subtitle>
+              <subtitle>Focuses on ensuring that an organization's databases run efficiently.</subtitle>
               <button>
                   <link>
                     <text>Click here to learn more!</text>
@@ -220,6 +225,11 @@
           <button>
               <text>Not Interested...</text>
               <postback>RETURN3</postback>
+            </button>
+            
+            <button>
+                <text>Found a career!</text>
+                <postback>DONE</postback>
             </button>
       </template>
   </category>
@@ -245,6 +255,11 @@
           <button>
               <text>Not Interested...</text>
               <postback>RETURN2</postback>
+            </button>
+            
+            <button>
+                <text>Found a career!</text>
+                <postback>DONE</postback>
             </button>
         </template>
   </category>
@@ -367,17 +382,19 @@
   </category>
   
   <category>
-      <pattern>Click _</pattern>
-      <template>Was I able to assist in your career search?</template>
+      <pattern>DONE</pattern>
+      <template>Was I able to assist in your career search?
       <button>
           <text>Yes, thank you!</text>
           <postback>SATISFIED</postback>
       </button>
-
+      
       <button>
           <text>No, I want to continue looking.</text>
           <postback>DISSATISFIED</postback>
       </button>
+      
+      </template>
   </category>
 </aiml>
 
